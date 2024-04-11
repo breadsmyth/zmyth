@@ -1,4 +1,5 @@
 import constants
+import draw
 from file_handlers import settings
 
 import pygame
@@ -17,6 +18,8 @@ pygame.display.set_caption(constants.TITLE)
 running = True
 while running:
     screen.fill((20, 20, 20))
+
+    draw.draw_all(screen)
 
     pygame.display.flip()
     clock.tick(constants.FPS)
