@@ -1,2 +1,2 @@
-FPS = 60
+FPS = 24
 TITLE = 'Zmyth'

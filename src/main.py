@@ -4,14 +4,21 @@ from file_handlers import settings
 
 import pygame
 
+
 pygame.init()
 clock = pygame.time.Clock()
 pygame.display.init()
 
+
 settings_obj = settings.load()
 resolution = tuple(settings_obj['resolution'])
+is_fullscreen = settings_obj['fullscreen']
 
-screen = pygame.display.set_mode(resolution)
+display_flags = pygame.SCALED
+if is_fullscreen:
+    display_flags |= pygame.FULLSCREEN
+
+screen = pygame.display.set_mode(resolution, display_flags)
 pygame.display.set_caption(constants.TITLE)
 
 
