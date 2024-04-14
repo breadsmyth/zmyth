@@ -1,7 +1,20 @@
+import game
+
 import pygame
 
-def draw_all(screen):
-    'Draws all panels to the screen'
+
+def draw_current_context(screen):
+    'Selects the appropriate draw function and calls it'
+    match game.CONTEXT:
+        case game.CONTEXT_MAIN_MENU:
+            pass
+        case game.CONTEXT_GAMEPLAY:
+            draw_gameplay(screen)
+
+
+def draw_gameplay(screen):
+    'Draws main gameplay screen'
+    screen.fill((20, 20, 20))
     screen_x, screen_y = screen.get_size()
 
     panel_width = screen_x // 5

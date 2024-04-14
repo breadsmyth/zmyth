@@ -1,13 +1,15 @@
+import pygame
+
 import constants
 import draw
+import game
 from file_handlers import settings
-
-import pygame
 
 
 pygame.init()
 clock = pygame.time.Clock()
 pygame.display.init()
+game.init()
 
 
 settings_obj = settings.load()
@@ -24,9 +26,7 @@ pygame.display.set_caption(constants.TITLE)
 
 running = True
 while running:
-    screen.fill((20, 20, 20))
-
-    draw.draw_all(screen)
+    draw.draw_current_context(screen)
 
     pygame.display.flip()
     clock.tick(constants.FPS)
